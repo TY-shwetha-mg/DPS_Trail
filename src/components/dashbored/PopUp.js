@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ handleClose, show, children }) => {
+const PopUp = ({  show, children }) => {
   const showHideClassName = show ? "modal d-block" : "modal d-none";
 
   return (
@@ -13,4 +13,4 @@ const Modal = ({ handleClose, show, children }) => {
   );
 };
 
-export default Modal;
+export default PopUp;

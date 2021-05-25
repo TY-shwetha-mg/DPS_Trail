@@ -1,27 +1,30 @@
-//import logo from './logo.svg';
-
-import './App.css';
+import Login from './components/Login';
+  import './assests/UserLogin.css'
+  import './assests/App.css'
+ 
 import Dashbored from './components/dashbored/Dashbored';
-import Header from './components/dashbored/Header';
-import Navbar from './components/dashbored/Navbar';
-
-
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 function App() {
-
-  
+ 
   return (
+    
     <div className="App">
-       <Navbar/>
-       <Header/>
-       {/* <ModalWindow/> */}
-      
-     <Dashbored/>
-    
-    
+
+
+<Router>
+        <Switch>
+          <Route exact path="/">
+          <Login/>
+         </Route>
+
+         <Route path='/dash' component={Dashbored}/>
+
+          </Switch>
+          </Router>
     </div>
+     
   );
 }
 

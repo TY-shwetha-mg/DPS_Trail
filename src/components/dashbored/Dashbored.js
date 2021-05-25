@@ -1,4 +1,5 @@
-import {useState} from 'react'
+import { useState } from 'react'
+import Header from './Header';
 import Modal from "./Modal";
 
 
@@ -7,74 +8,83 @@ function Dashbored() {
 
     const [modal, setmodal] = useState(false);
     const [modalInput, setmodalInput] = useState("")
+
     
-    function modalClose(){
-        setmodal(false)
-    }
 
 
 
     return (
-      
-        
+
+
         <div>
 
-<Modal
-        show={modal}
-       
-      >
-        <div class="card col-sm-7 " id="modal">
-          <div className="card-body">
-            <form>
-              <h5>Create New Workspace</h5>
-              <div className="form-group offset-1">
-                <label for="project-name">Workspace Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="project-name"
-               
-                />
-              </div>
-              <div className="form-group offset-1">
-                <label for="description">Description</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="description"
-                />
-              </div>
+            <Modal show={modal} >
+                <div className="card col-sm-7 " id="modal">
+                    <div className="card-body">
+                        <form>
+                            <h5>Create New Workspace</h5>
+                            <div className="form-group offset-1">
+                                <label for="project-name">Workspace Name</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="project-name"
 
-              <span>
-                <button
-                  type="button"
-                  id="button"
-                  className="btn btn-primary"
-                  onClick={(e)=>{setmodalInput(e.target.value)}}
-                 
-                >
-                  Create
-                </button>
-                <button
-                  type="button"
-                  id="button"
-                  className="btn btn-light offset-1"
-                  onClick={()=>{setmodal(false)}}
-                >
-                  Close
-                </button>
-              </span>
-            </form>
-          </div>
-        </div>
-      </Modal>
+                                />
+                            </div>
+                            <div className="form-group offset-1">
+                                <label for="description">Description</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="description"
+                                />
+                            </div>
 
-           
+                            <span>
+                                <button
+                                    type="button"
+                                    id="button"
+                                    className="btn btn-primary"
+                                    onClick={(e) => { setmodalInput(e.target.value) }} >
+                                    Create
+                                   </button> 
+
+                                <button
+                                    type="button"
+                                    id="button"
+                                    className="btn btn-primary offset-1"
+                                    onClick={() => { setmodal(false) }}
+                                >
+                                    Close
+                </button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </Modal>
+
+            <nav className="navbar">
+        
+            <a className="navbar-brand" href="#">
+             Data Processing Services
+            </a>
+      
+            <button className ="btn" type="submit">
+              <img className ="user"
+                src="https://img.icons8.com/office/30/000000/change-user-male--v1.png"
+              />
+            </button>
+        
+          </nav>
+      <Header/>
+
+
             <div className="background  ">
-                <div className="col-md-4 cards">
-                    <span>DPS Wrokspace</span>
-                    <h3>bluebadgesaw</h3>
-                    <button className="btn mt-3 col-md-3" id="newbtn" onClick={()=>{setmodal(true)}}   >New <i class="fas fa-chevron-down"></i> </button>
+                <div className="col-md-4 cards ">
+                    {/* <span>DPS Wrokspace</span> */}
+                    <h3>Create New Workspace</h3>
+                    <button className="btn mt-3 col-md-3" id="newbtn" onClick={() => { setmodal(true) }}   >New <i class="fas fa-chevron-down"></i> </button>
                 </div>
 
                 <div className=" cards mr-5 mt-5  pb-5 ">
@@ -83,7 +93,7 @@ function Dashbored() {
                             <div className="card p-1 shadow" >
                                 <div class="row m-0">
                                     <div class="col-md-4 p-3 ">
-                                        <img src="./dataimg.jpg" className="imgFluid cardimage"  />
+                                        <img src="./dataimg.jpg" className="imgFluid cardimage" />
                                     </div>
                                     <div class="col-md-8 " >
                                         <div class=" cardTitle font-weight-bold " >ingest</div>
@@ -92,7 +102,6 @@ function Dashbored() {
                                 </div>
                             </div>
                         </div>
-
                         <div className="col-md-3">
                             <div className="card p-1 shadow">
                                 <div class="row m-0">
@@ -146,9 +155,8 @@ function Dashbored() {
                     <div className="row">
                         <div className="col-md-5 cards  ">
                             <h5 className="font-weight-bold mt-3 ">
-                                Resources
+                                Recent Projects
                             </h5>
-                            <p className="font-weight-bold mt-3 " style={{ borderBottom: '1px solid rgb(212,212,212)' }}>Recent Projects</p>
 
                             <div className="row d-flex" style={{ borderBottom: '1px solid rgb(212,212,212)' }}>
                                 <div className=" col-md-6">
@@ -163,7 +171,7 @@ function Dashbored() {
                             <div style={{ borderBottom: '1px solid rgb(212,212,212)' }} className="row">
                                 <div className="col-md-6 p-2" >
                                     <i class="far fa-file-alt"></i>
-                                    <a href="" className="ml-2">Notebook 1</a>
+                                    <a href="#" className="ml-2">Notebook 1</a>
                                 </div>
                                 <div className="col-md-6 ">
                                     4 Days ago
@@ -173,7 +181,7 @@ function Dashbored() {
                             <div style={{ borderBottom: '1px solid rgb(212,212,212)' }} className="row">
                                 <div className="col-md-6 p-2" >
                                     <i class="far fa-file-alt"></i>
-                                    <a href="" className="ml-2">Notebook 1</a>
+                                    <a href="#" className="ml-2">Notebook 1</a>
                                 </div>
                                 <div className="col-md-6 ">
                                     18 Days ago
@@ -182,7 +190,7 @@ function Dashbored() {
                             <div style={{ borderBottom: '1px solid rgb(212,212,212)' }} className="row">
                                 <div className="col-md-6 p-2" >
                                     <i class="far fa-file-alt"></i>
-                                    <a href="" className="ml-2">SQL Script 4</a>
+                                    <a href="#" className="ml-2">SQL Script 4</a>
                                 </div>
                                 <div className="col-md-6 ">
                                     18 Days ago
@@ -191,7 +199,7 @@ function Dashbored() {
                             <div style={{ borderBottom: '1px solid rgb(212,212,212)' }} className="row">
                                 <div className="col-md-6 p-2" >
                                     <i class="far fa-file-alt"></i>
-                                    <a href="" className="ml-2">Shared Metadata Examples</a>
+                                    <a href="#" className="ml-2">Shared Metadata Examples</a>
                                 </div>
                                 <div className="col-md-6 ">
                                     18 Days ago
@@ -200,7 +208,7 @@ function Dashbored() {
                             <div style={{ borderBottom: '1px solid rgb(212,212,212)' }} className="row">
                                 <div className="col-md-6 p-2" >
                                     <i class="far fa-file-alt"></i>
-                                    <a href="" className="ml-2">Shared Metadata Examples</a>
+                                    <a href="#" className="ml-2">Shared Metadata Examples</a>
                                 </div>
                                 <div className="col-md-6 ">
                                     4 Days ago
@@ -209,7 +217,7 @@ function Dashbored() {
                             <div style={{ borderBottom: '1px solid rgb(212,212,212)' }} className="row">
                                 <div className="col-md-6 p-2" >
                                     <i class="far fa-file-alt"></i>
-                                    <a href="" className="ml-2">Shared Metadata Examples</a>
+                                    <a href="#" className="ml-2">Shared Metadata Examples</a>
                                 </div>
                                 <div className="col-md-6 ">
                                     18 Days ago
@@ -218,7 +226,7 @@ function Dashbored() {
                             <div style={{ borderBottom: '1px solid rgb(212,212,212)' }} className="row">
                                 <div className="col-md-6 p-2" >
                                     <i class="far fa-file-alt"></i>
-                                    <a href="" className="ml-2">Shared Metadata Examples</a>
+                                    <a href="#" className="ml-2">Shared Metadata Examples</a>
                                 </div>
                                 <div className="col-md-6 ">
                                     18 Days ago
@@ -227,7 +235,7 @@ function Dashbored() {
                             <div style={{ borderBottom: '1px solid rgb(212,212,212)' }} className="row">
                                 <div className="col-md-6 p-2" >
                                     <i class="far fa-file-alt"></i>
-                                    <a href="" className="ml-2">Shared Metadata Examples</a>
+                                    <a href="#" className="ml-2">Shared Metadata Examples</a>
                                 </div>
                                 <div className="col-md-6 ">
                                     18 Days ago
@@ -236,7 +244,7 @@ function Dashbored() {
                             <div style={{ borderBottom: '1px solid rgb(212,212,212)' }} className="row">
                                 <div className="col-md-6 p-2" >
                                     <i class="far fa-file-alt"></i>
-                                    <a href="" className="ml-2">Notebook 1</a>
+                                    <a href="#" className="ml-2">Notebook 1</a>
                                 </div>
                                 <div className="col-md-6 ">
                                     18 Days ago
@@ -255,7 +263,17 @@ function Dashbored() {
                             <h5 className="font-weight-bold mt-3 ">
                                 Resources
                             </h5>
-                            <a className="mt-5">Getting Started</a>
+                            <p>Discover the capabilities offered by  synpasis and learn how to make the most
+                                 of them Learn about precing details for synopsis capabilities Samples,Guide and  tour to get you started
+
+                                 
+                                 
+                                 </p>
+
+
+
+
+                            {/* <a className="mt-5">Getting Started</a>
                             <p>Samples,Guide and  tour to get you started</p>
 
                             <a className="mt-3">Synapse Analytics overview <i class="far fa-edit"></i></a>
@@ -269,7 +287,7 @@ function Dashbored() {
                             <p>Visit the Documentation center for quickstart, how to guides, and reference for for powershell Apis</p>
 
                             <a className="mt-3">Give feedback <i class="far fa-edit"></i></a>
-                            <p>Share your comments or suggestions with us to imporve the syspsis</p>
+                            <p>Share your comments or suggestions with us to imporve the syspsis</p> */}
 
 
 
